@@ -1,0 +1,34 @@
+.task {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.6rem 2rem;
+
+    background: yellowgreen;
+
+}
+
+.content {
+    width: 90%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.task span {
+    font-size: 1.6rem;
+}
+
+.task_done {
+    text-decoration: line-through;
+}
+
+.task img:last-child:hover {
+    cursor: pointer;
+    filter: invert(26%) sepia(79%) saturate(7204%) hue-rotate(355deg) brightness(105%) contrast(130%);
+}

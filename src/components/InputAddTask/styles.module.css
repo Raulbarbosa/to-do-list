@@ -1,0 +1,54 @@
+.input-area {
+    width: 73.6rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+
+    margin-top: -2.5rem;
+
+    margin-bottom: 6.4rem;
+}
+
+.custom-input {
+    width: 62.8rem;
+    height: 5rem;
+    background: var(--second-color);
+    border-radius: 8px;
+    padding: 16px;
+    outline: none;
+    box-sizing: border-box;
+    color: var(--text);
+}
+
+.custom-input::placeholder {
+    color: var(--text);
+}
+
+.custom-input:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.4px #FFFFFF;
+}
+
+.custom-button {
+    width: 9rem;
+    height: 5rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+
+    border-radius: 8px;
+
+    font-size: 1.6rem;
+
+    background: var(--second-color);
+    color: var(--text);
+}
+
+.custom-button:hover {
+    background: hsl(282, 43%, 32%);
+    border: 1px solid var(--text);
+}

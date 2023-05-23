@@ -1,0 +1,26 @@
+.container {
+    width: 100vw;
+    height: 20rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--third-color);
+}
+
+.logo {
+    width: 6rem;
+    transition-duration: 1s;
+    transform: rotate(45deg)
+}
+
+.logo:hover {
+    transition-duration: 1s;
+    transform: rotate(0deg);
+}
+
+.project-name {
+    font-size: 6rem;
+    color: var(--text);
+}

@@ -1,0 +1,50 @@
+.task-board {
+    width: 73.6rem;
+    height: 28.7rem;
+
+    background: var(--third-color);
+
+    border-radius: 8px;
+}
+
+.tasks-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5rem;
+    padding-bottom: 0.5rem;
+
+    border-bottom: 1px solid gray;
+}
+
+.tasks-info span {
+    font-size: 1.6rem;
+    color: var(--text);
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.number {
+    min-height: 1.6rem;
+    min-width: 1.6rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    background: var(--second-color);
+}
+
+.tasks {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    padding: 0 2.4rem;
+}
