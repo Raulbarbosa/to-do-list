@@ -7,7 +7,6 @@ export function App() {
     return (
         <div className={styles['container-main']}>
             <Header />
-            <InputAddTask />
             <TaskBoard />
         </div>
     )
