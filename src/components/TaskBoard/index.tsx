@@ -1,61 +1,50 @@
 import styles from './styles.module.css';
 import { Task } from '../Task';
 import { ITask } from '../../interfaces';
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { InputAddTask } from '../InputAddTask';
-
-const tasks: ITask[] = [
-    {
-        id: 1,
-        content: "Fazer compras",
-        status: true
-    },
-    {
-        id: 2,
-        content: "Ler livro",
-        status: false
-    },
-    {
-        id: 3,
-        content: "Estudar para a prova",
-        status: false
-    }
-];
+import { v4 as uuidv4 } from 'uuid';
+import tasks from '../../data';
 
 export function TaskBoard() {
 
     const [allTasks, setAllTasks] = useState(tasks);
     const [tasksDone, setTasksDone] = useState(0);
+    const [newTask, setNewTask] = useState('');
+
+    // function handlerAddNewTask(event: FormEvent) {
+    //     event.preventDefault()
+
+    //     const data = {
+    //         id: uuidv4(),
+    //         content: newTask,
+    //         status: false
+    //     }
+
+    //     setAllTasks([...allTasks, data])
+    //     setNewTask('')
+
+    // }
 
     function handlerChangeStatus(task: ITask) {
-
         const updatedTask = allTasks.map((item) => {
             if (item.id == task.id) {
                 item.status = !task.status
             }
             return item
         })
-
         setAllTasks(updatedTask)
     }
 
-    function handlerDeleteTask(id: number) {
-        const updatedTasks = allTasks.filter(task => {
+    function handlerDeleteTask(id: string) {
 
+        const updatedTasks = allTasks.filter(task => {
             return task.id !== id;
         })
+        console.log(updatedTasks);
+
         setAllTasks(updatedTasks)
     }
-
-    // useEffect(() => {
-    //     () => {
-    //         let localTasksDone = tasks.filter((task) => {
-    //             return task.status === true
-    //         })
-
-    //         setTasksDone(localTasksDone.length)
-    //     }
-    // }, [tasks])
 
     return (
         <div>
@@ -72,13 +61,13 @@ export function TaskBoard() {
                     </div>
                 </div>
                 <div className={styles["tasks"]}>
-                    {tasks.map((item) => {
+                    {allTasks.map((task) => {
                         return (
                             <Task
-                                key={item.id}
-                                task={item}
+                                key={task.id}
+                                task={task}
                                 onDeleteTask={handlerDeleteTask}
-                                onChangeStatus={() => handlerChangeStatus(item)}
+                                onChangeStatus={() => handlerChangeStatus(task)}
                             />
                         )
                     })}
