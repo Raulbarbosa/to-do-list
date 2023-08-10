@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
-import CircleIcon from '../../assets/circle.svg';
-import CompleteCircleIcon from '../../assets/completeCircle.svg';
+import CircleIcon from '../../assets/circle.png';
+import CompleteCircleIcon from '../../assets/completeCircle.png';
 import TrashIcon from '../../assets/trash.svg';
 import { ITask } from '../../interfaces';
 
@@ -18,7 +18,6 @@ export function Task({ task, onDeleteTask, onChangeStatus }: TaskProps) {
 
     function handlerChangeStatus() {
         onChangeStatus()
-        console.log(task)
     }
 
     return (

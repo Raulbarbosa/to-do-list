@@ -3,6 +3,20 @@
     height: 28.7rem;
 
     background: var(--third-color);
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--second-color);
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-color);
+    }
 
     border-radius: 8px;
 }
@@ -34,9 +48,10 @@
 .number {
     min-height: 1.6rem;
     min-width: 1.6rem;
-    border-radius: 50%;
     padding: 0.5rem;
-    background: var(--second-color);
+    color: black;
+    border-bottom: 1px solid black;
+    line-height: 0.5rem;
 }
 
 .tasks {

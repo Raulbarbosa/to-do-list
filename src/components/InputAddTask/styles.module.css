@@ -10,7 +10,7 @@
     margin-bottom: 6.4rem;
 }
 
-.custom-input {
+.custom-textarea {
     width: 62.8rem;
     height: 5rem;
     background: var(--second-color);
@@ -19,6 +19,9 @@
     outline: none;
     box-sizing: border-box;
     color: var(--text);
+    resize: none;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .custom-input::placeholder {

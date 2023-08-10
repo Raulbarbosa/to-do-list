@@ -12,22 +12,20 @@ export function TaskBoard() {
     const [tasksDone, setTasksDone] = useState(0);
     const [newTask, setNewTask] = useState('');
 
-    // function handlerAddNewTask(event: FormEvent) {
-    //     event.preventDefault()
+    function handlerAddNewTask(): void {
 
-    //     const data = {
-    //         id: uuidv4(),
-    //         content: newTask,
-    //         status: false
-    //     }
+        const data = {
+            id: uuidv4(),
+            content: newTask,
+            status: false
+        }
 
-    //     setAllTasks([...allTasks, data])
-    //     setNewTask('')
-
-    // }
+        setAllTasks(state => [...state, data])
+        setNewTask('')
+    }
 
     function handlerChangeStatus(task: ITask) {
-        const updatedTask = allTasks.map((item) => {
+        const updatedTask = allTasks.filter((item) => {
             if (item.id == task.id) {
                 item.status = !task.status
             }
@@ -46,14 +44,22 @@ export function TaskBoard() {
         setAllTasks(updatedTasks)
     }
 
+    useEffect(() => {
+        const taskdone = allTasks.filter((item) => {
+            return item.status === true
+        })
+
+        setTasksDone(taskdone.length)
+    }, [allTasks])
+
     return (
         <div>
-            <InputAddTask />
+            <InputAddTask onCreateTask={handlerAddNewTask} value={newTask} handlerValue={setNewTask} />
             <div className={styles["task-board"]}>
                 <div className={styles['tasks-info']}>
                     <div className={styles['info']}>
                         <span>Tarefas criadas</span>
-                        <span className={styles['number']}> {tasks.length} </span>
+                        <span className={styles['number']}> {allTasks.length} </span>
                     </div>
                     <div className={styles['info']}>
                         <span>Concluídas</span>

@@ -34,6 +34,12 @@
     text-decoration: line-through;
 }
 
+.task img:first-child {
+    border: 2px solid transparent;
+    align-items: center;
+}
+
+
 .task img:last-child:hover {
     cursor: pointer;
     filter: invert(26%) sepia(79%) saturate(7204%) hue-rotate(355deg) brightness(105%) contrast(130%);
