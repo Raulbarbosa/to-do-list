@@ -10,7 +10,8 @@
 
     padding: 1.6rem 2rem;
 
-    background: yellowgreen;
+    border: 1px solid gray;
+    border-radius: 8px;
 
 }
 

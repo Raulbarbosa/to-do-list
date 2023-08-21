@@ -39,7 +39,6 @@ export function TaskBoard() {
         const updatedTasks = allTasks.filter(task => {
             return task.id !== id;
         })
-        console.log(updatedTasks);
 
         setAllTasks(updatedTasks)
     }
@@ -53,9 +52,9 @@ export function TaskBoard() {
     }, [allTasks])
 
     return (
-        <div>
+        <div >
             <InputAddTask onCreateTask={handlerAddNewTask} value={newTask} handlerValue={setNewTask} />
-            <div className={styles["task-board"]}>
+            <div style={{ display: `${allTasks.length == 0 ? 'none' : ''}` }} className={styles["task-board"]}>
                 <div className={styles['tasks-info']}>
                     <div className={styles['info']}>
                         <span>Tarefas criadas</span>
@@ -80,5 +79,6 @@ export function TaskBoard() {
                 </div>
             </div>
         </div>
+
     )
 }
